@@ -1,0 +1,19 @@
+docker run --name postgres -e POSTGRES_PASSWORD=magic3 -p 5432:5432 -d postgres
+docker run --name mongodb -p 27017:27017 -d -t mongo
+docker run --name redis -p 6379:6379 -d -t redis:alpine
+
+
+https://www.electronjs.org/apps/postbird
+
+
+# Correção de formatação para todos os aqruivos
+yarn eslint --fix src --ext .js
+
+# Cria uma migration
+yarn sequelize migration:create --name=create=users
+
+# Roda as migrations
+yarn sequelize db:migrate
+
+# Desfaz a última migration
+yarn sequelize db:migrate:undo
